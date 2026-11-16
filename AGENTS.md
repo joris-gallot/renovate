@@ -4,7 +4,7 @@ Self-hosted Renovate for every repo of the `joris-gallot` account, run from GitH
 
 ## How it works
 
-- `.github/workflows/renovate.yml` runs every 6 hours (also manual). It authenticates as the `joris-gallot-bot` GitHub App, installed on all repos of the account (secrets `RENOVATE_BOT_APP_CLIENT_ID` and `RENOVATE_BOT_APP_PRIVATE_KEY`), so pull requests come from the app's bot user and trigger CI.
+- `.github/workflows/renovate.yml` runs every 6 hours (also manual). It authenticates as the `joris-gallot-renovate` GitHub App, installed on all repos of the account (secrets `RENOVATE_BOT_APP_CLIENT_ID` and `RENOVATE_BOT_APP_PRIVATE_KEY`), so pull requests come from the app's bot user and trigger CI.
 - Renovate autodiscovers `joris-gallot/*` (forks and archived repos are skipped) but is **opt-in**: a repo is processed only if it has a Renovate config (`renovate.json`, `.github/renovate.json`...). No onboarding PR is ever opened.
 - `default.json` is the shared preset. A repo opts in with:
 
